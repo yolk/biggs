@@ -16,7 +16,7 @@ h3. Standalone usage
    
    f.format(
       :recipient  => "Yolk Sebastian Munz & Julia Soergel GbR", 
-      :street     => "Adalbertstr. 11",
+      :street     => "Adalbertstr. 11", # <= street + house number
       :city       => "Berlin",
       :zip        => 10999,
       :state      => "Berlin", # <= state/province/region

@@ -39,7 +39,7 @@ describe Biggs, "with options" do
     before { @biggs = Biggs::Formatter.new(:blank_country_on => 'de') }
     
     it "should have blank country in 'de' address" do
-      @biggs.format('de', FAKE_ATTR_WO_STATE).should eql("MR. X\nSTREET\n12345 CITY\n")
+      @biggs.format('de', FAKE_ATTR_WO_STATE).should eql("MR. X\nSTREET\n12345 CITY")
     end
     
     it "should have country in 'fr' address" do
@@ -52,7 +52,7 @@ describe Biggs, "with options" do
     before { @biggs = Biggs::Formatter.new(:blank_country_on => ['US', "de"]) }
     
     it "should have blank country in 'us' address" do
-      @biggs.format('us', FAKE_ATTR_WITH_STATE).should eql("MR. X\nSTREET\nCITY STATE 12345\n")
+      @biggs.format('us', FAKE_ATTR_WITH_STATE).should eql("MR. X\nSTREET\nCITY STATE 12345")
     end
     
     it "should have country in 'fr' address" do

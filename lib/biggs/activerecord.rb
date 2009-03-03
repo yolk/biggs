@@ -36,15 +36,28 @@ module Biggs
       private
     
       def biggs_country
-        self.send(self.class.biggs_value_methods[:country] || :country)
+        biggs_get_value(:country)
       end
     
       def biggs_values
         values = {}
         (Biggs::Formatter::FIELDS - [:country]).each do |field|
-          values[field] = self.send(self.class.biggs_value_methods[field] || field)
+          values[field] = biggs_get_value(field)
         end
         values
+      end
+      
+      def biggs_get_value(field)
+        key = self.class.biggs_value_methods[field.to_sym] || field.to_sym
+        
+        case key
+        when Symbol, String
+          self.send(key.to_sym)
+        when Proc
+          key.call(self).to_s
+        else
+          raise "Biggs: Can't handle #{field} type #{key.class}"
+        end
       end
     end
   end

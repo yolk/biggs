@@ -55,6 +55,18 @@ class FooBarCustomMethod < ActiveRecord::Base
   biggs :my_postal_address_method
 end
 
+class FooBarCustomProc < ActiveRecord::Base
+  include BiggsStandardMethods
+  
+  biggs :postal_address, 
+        :country => Proc.new {|it| it.method_accessed_from_proc + "XX"}, 
+        :state => Proc.new {|it| it.state.downcase }
+  
+  def method_accessed_from_proc
+    "DE"
+  end
+end
+
 
 describe "ActiveRecord Class" do
   
@@ -126,7 +138,7 @@ describe "ActiveRecord Instance" do
     end
   end
   
-  describe "Customized Blank DE Country" do
+  describe "Customized Method name" do
     before(:each) do
       connection = mock(Connection, :columns => [])
       FooBarCustomMethod.stub!(:connection).and_return(connection)
@@ -138,6 +150,17 @@ describe "ActiveRecord Instance" do
     
     it "should return formatted address on my_postal_address_method" do
       FooBarCustomMethod.new.my_postal_address_method.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nUnited States")
+    end
+  end
+  
+  describe "Customized Proc as Param" do
+    before(:each) do
+      connection = mock(Connection, :columns => [])
+      FooBarCustomProc.stub!(:connection).and_return(connection)
+    end
+    
+    it "should return formatted address for unknown-country DEXX" do
+      FooBarCustomProc.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY state ZIP\ndexx")
     end
   end
 

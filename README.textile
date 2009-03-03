@@ -59,7 +59,16 @@ You can customize the method-names biggs will use by passing in a hash of option
             :street => Proc.new {|address| "#{address.street} #{address.house_number}" }
    end
    
-You can pass in a symbol to let biggs call a different method on your Address-model, or a Proc-object to create your data on the fly.
+You can pass in a symbol to let biggs call a different method on your Address-model, or a Proc-object to create your data on the fly. 
+
+You can even pass in a array of symbols:
+
+   Address < ActiveRecord::Base
+      biggs :postal_address, 
+            :recipient => [:company_name, :person_name]
+   end
+   
+This will call the methods company_name and person_name on your address-instance, remove any blank returned values and join the rest by a line break.
 
 To access the formatted address string, simply call the provided method on an address instance:
 

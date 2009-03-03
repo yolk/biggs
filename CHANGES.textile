@@ -1,3 +1,7 @@
+h3. biggs 0.1.1 - 2009-3-4
+
+* Values can now be specified by an array of symbols.
+
 h3. biggs 0.1.1 - 2009-3-3
 
 * Refactored activerecord-adapter to include only basic setup method in ActiveRecord:Base

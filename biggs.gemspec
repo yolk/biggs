@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sebastian Munz"]
   s.date = %q{2009-03-03}
-  s.description = %q{biggs is a small ruby tool to format postal addresses from over 60 countries. Use it as a standalone ruby gem or as a plugin for Rails.}
+  s.description = %q{biggs is a small ruby gem/rails plugin for formatting postal addresses from over 60 countries.}
   s.email = %q{sebastian@yo.lk}
   s.files = ["README.textile", "VERSION.yml", "lib/biggs", "lib/biggs/activerecord.rb", "lib/biggs/formatter.rb", "lib/biggs.rb"]
   s.has_rdoc = true
@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}
-  s.summary = %q{biggs is a small ruby tool to format postal addresses from over 60 countries. Use it as a standalone ruby gem or as a plugin for Rails.}
+  s.summary = %q{biggs is a small ruby gem/rails plugin for formatting postal addresses from over 60 countries.}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

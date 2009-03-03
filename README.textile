@@ -1,14 +1,14 @@
-biggs is a small ruby tool to format postal addresses from over 60 countries. Use it as a standalone ruby gem or as a plugin for Rails.
+biggs is a small ruby gem/rails plugin for formatting postal addresses from over 60 countries.
 
 h3. Install
 
-As a ruby gem
+As a ruby gem:
    
    sudo gem install yolk-biggs
    
-or as a Rails plugin:
+If your rather prefer to install it as a plugin for rails, from your application directory simply run:
    
-   script/install plugin git://github.com/yolk/biggs.git
+   script/plugin install git://github.com/yolk/biggs.git
 
 h3. Standalone usage
    

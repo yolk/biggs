@@ -55,10 +55,11 @@ You can customize the method-names biggs will use by passing in a hash of option
    Address < ActiveRecord::Base
       biggs :postal_address, 
             :zip => :postal_code,
-            :country => :country_code
+            :country => :country_code,
+            :street => Proc.new {|address| "#{address.street} #{address.house_number}" }
    end
    
-Now biggs will use the methods postal_code and country_code to gather the data for the ZIP-code and the country:
+You can pass in a symbol to let biggs call a different method on your Address-model, or a Proc-object to create your data on the fly.
 
 To access the formatted address string, simply call the provided method on an address instance:
 

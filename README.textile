@@ -40,8 +40,7 @@ With the data from the above example this would return:
 
    "Yolk Sebastian Munz & Julia Soergel GbR
    Adalbertstr. 11
-   10999 Berlin
-   "
+   10999 Berlin"
 
 h3. Usage with Rails and ActiveRecord
 

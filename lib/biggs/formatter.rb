@@ -4,7 +4,7 @@ module Biggs
     FIELDS = [:recipient, :street, :city, :state, :zip, :country]
     
     def initialize(options={})
-      @blank_country_on = [options[:blank_country_on]].compact.flatten
+      @blank_country_on = [options[:blank_country_on]].compact.flatten.map{|s| s.to_s.downcase}
     end
   
     def format(country_code, values={})

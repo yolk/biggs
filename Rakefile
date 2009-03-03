@@ -11,7 +11,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = $gem_name
-    s.summary = "biggs is a small ruby tool to format postal addresses from over 60 countries. Use it as a standalone ruby gem or as a plugin for Rails."
+    s.summary = "biggs is a small ruby gem/rails plugin for formatting postal addresses from over 60 countries."
     s.email = "sebastian@yo.lk"
     s.homepage = "http://github.com/yolk/biggs"
     s.description = s.summary

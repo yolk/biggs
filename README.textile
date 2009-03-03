@@ -1,0 +1,136 @@
+biggs is a small ruby tool to format postal addresses from over 60 countries. Use it as a standalone ruby gem or as a plugin for Rails.
+
+h3. Install
+
+As a ruby gem
+   
+   sudo gem install yolk-biggs
+   
+or as a Rails plugin:
+   
+   script/install plugin git://github.com/yolk/biggs.git
+
+h3. Standalone usage
+   
+   f = Biggs::Formatter.new
+   
+   f.format(
+      :recipient  => "Yolk Sebastian Munz & Julia Soergel GbR", 
+      :street     => "Adalbertstr. 11",
+      :city       => "Berlin",
+      :zip        => 10999,
+      :state      => "Berlin", # <= state/province/region
+      :country    => "de" # <= ISO alpha 2 code
+   )
+
+returns
+   
+   "Yolk Sebastian Munz & Julia Soergel GbR
+   Adalbertstr. 11
+   10999 Berlin
+   Germany"
+   
+At the moment Biggs::Formatter.new accepts only one option:
+
+*blank_county_on* ISO alpha 2 code (single string or array) of countries the formatter should skip the line "country" (for national shipping).
+   
+   f = Biggs::Formatter.new(:blank_county_on => "de")
+   
+With the data from the above example this would return:
+
+   "Yolk Sebastian Munz & Julia Soergel GbR
+   Adalbertstr. 11
+   10999 Berlin
+   "
+
+h3. Usage with Rails and ActiveRecord
+
+   Address < ActiveRecord::Base
+      biggs :postal_address
+   end
+   
+This adds the method postal_address to your Address-model, and assumes the presence of the methods/columns recipient, street, city, zip, state, and country to get the address data. Country should return the ISO-code (e.g. 'us', 'fr', 'de'). 
+
+You can customize the method-names biggs will use by passing in a hash of options:
+   
+   Address < ActiveRecord::Base
+      biggs :postal_address, 
+            :zip => :postal_code,
+            :country => :country_code
+   end
+   
+Now biggs will use the methods postal_code and country_code to gather the data for the ZIP-code and the country:
+
+To access the formatted address string, simply call the provided method on an address instance:
+
+   Address.find(1).postal_code
+   
+If you pass in a ISO alpha 2 code as :country that is not supported by biggs, it will choose the US-format for addresses with an state specified, and the french/german format for addresses without an state.
+   
+h3. Supported countries
+
+biggs knows how to format addresses of over 60 different countries. If you are missing one or find an misstake, feel free to let us know, fork this repository and commit your additions.
+
+* Argentina
+* Australia
+* Austria
+* Bahrain
+* Belgium
+* Bosnia and Herzegovina
+* Brazil
+* Bulgaria
+* Canada
+* China
+* Croatia
+* Czech
+* Denmark
+* Egypt
+* Finland
+* France
+* Germany
+* Greece
+* Greenland
+* Hong Kong
+* Hungary
+* Iceland
+* India
+* Indonesia
+* Ireland
+* Israel
+* Italy
+* Japan
+* Jordan
+* Kuwait
+* Lebanon
+* Luxembourg
+* Macedonia
+* Mexico
+* Netherlands
+* New Zealand
+* Norway
+* Oman
+* Philippines
+* Poland
+* Portugal
+* Qatar
+* Romania
+* Russian Federation
+* Saudi Arabia
+* Serbia and Montenegro
+* Singapore
+* Slovakia
+* Slovenia
+* South Africa
+* South Korea
+* Spain
+* Sweden
+* Switzerland
+* Syrian Arab Republic
+* Taiwan
+* Turkey
+* Ukraine
+* United Arab Emirates
+* United Kingdom
+* United States
+* Yemen
+

@@ -1,4 +1,4 @@
-h3. biggs 0.1.1 - 2009-3-4
+h3. biggs 0.1.2 - 2009-3-4
 
 * Values can now be specified by an array of symbols.
 

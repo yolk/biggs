@@ -121,8 +121,8 @@ describe "ActiveRecord Instance" do
       FooBarCustomBlankDECountry.stub!(:connection).and_return(connection)
     end
   
-    it "should return address from custom fields on postal_address" do
-      FooBarCustomBlankDECountry.new.postal_address.should eql("RECIPIENT\nSTREET\nZIP CITY\n")
+    it "should return address wo country on postal_address" do
+      FooBarCustomBlankDECountry.new.postal_address.should eql("RECIPIENT\nSTREET\nZIP CITY")
     end
   end
   

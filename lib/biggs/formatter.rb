@@ -22,7 +22,7 @@ module Biggs
       country_name = "" if blank_country_on.include?(country_code)
       country_format.gsub!(/\{\{country\}\}/, country_name)
     
-      country_format
+      country_format.gsub(/\n$/,"")
     end
   
     attr_accessor :blank_country_on, :default_country_without_state, :default_country_with_state

@@ -54,10 +54,16 @@ module Biggs
         key = self.class.biggs_value_methods[field.to_sym] || field.to_sym
         
         case key
-        when Symbol, String
+        when Symbol
           self.send(key.to_sym)
         when Proc
           key.call(self).to_s
+        when Array
+          if key.all?{|it| it.is_a?(Symbol) }
+            key.map{|method| self.send(method) }.reject(&:blank?).join("\n")
+          else
+            raise "Biggs: Can't handle #{field} type Array with non-symbolic entries"
+          end
         else
           raise "Biggs: Can't handle #{field} type #{key.class}"
         end

@@ -67,6 +67,29 @@ class FooBarCustomProc < ActiveRecord::Base
   end
 end
 
+class FooBarCustomArray < ActiveRecord::Base
+  include BiggsStandardMethods
+  
+  biggs :postal_address,  
+        :street => [:address_1, :address_empty, :address_nil, :address_2]
+  
+  def address_1
+    "Address line 1"
+  end
+  
+  def address_2
+    "Address line 2"
+  end
+  
+  def address_empty
+    ""
+  end
+  
+  def address_nil
+    nil
+  end
+end
+
 
 describe "ActiveRecord Class" do
   
@@ -161,6 +184,17 @@ describe "ActiveRecord Instance" do
     
     it "should return formatted address for unknown-country DEXX" do
       FooBarCustomProc.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY state ZIP\ndexx")
+    end
+  end
+  
+  describe "Customized array of symbols" do
+    before(:each) do
+      connection = mock(Connection, :columns => [])
+      FooBarCustomArray.stub!(:connection).and_return(connection)
+    end
+    
+    it "should return formatted address with two lines for street" do
+      FooBarCustomArray.new.postal_address.should eql("RECIPIENT\nAddress line 1\nAddress line 2\nCITY STATE ZIP\nUnited States")
     end
   end
 

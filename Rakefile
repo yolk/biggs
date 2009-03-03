@@ -40,7 +40,6 @@ begin
     s.homepage = "http://github.com/yolk/biggs"
     s.description = s.summary
     s.authors = ["Sebastian Munz"]
-    s.rdoc = false
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"

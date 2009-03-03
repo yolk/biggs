@@ -62,7 +62,7 @@ Now biggs will use the methods postal_code and country_code to gather the data f
 
 To access the formatted address string, simply call the provided method on an address instance:
 
-   Address.find(1).postal_code
+   Address.find(1).postal_address
    
 If you pass in a ISO alpha 2 code as :country that is not supported by biggs, it will choose the US-format for addresses with an state specified, and the french/german format for addresses without an state.
    

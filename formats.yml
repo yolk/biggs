@@ -254,10 +254,10 @@ jo:
 jp: 
   name: Japan
   format: |-
-    {{country}}
     〒{{zip}}
     {{state}}{{city}}{{street}}
     {{recipient}}
+    {{country}}
 kr: 
   name: South Korea
   format: |-

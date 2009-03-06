@@ -238,13 +238,25 @@ jo:
     {{street}}
     {{zip}} {{city}}
     {{country}}
+# Here is a sample of Japanese formatted addresses (Apple Japan HQ).
+# Usually they have "Postal mark" before zip (postal) code,
+# and parts of an address are not separated with space.
+#  Biggs::Formatter.new(:blank_country_on => "jp").format(
+#    "jp",
+#    :recipient => "アップルジャパン株式会社 本社",
+#    :street => "西新宿3-20-2",
+#    :city => "新宿区",
+#    :state => "東京都",
+#    :zip => "163-1480")
+#  〒163-1480
+#  東京都新宿区西新宿3-20-2
+#  アップルジャパン株式会社 本社
 jp: 
   name: Japan
   format: |-
+    〒{{zip}}
+    {{state}}{{city}}{{street}}
     {{recipient}}
-    {{zip}}
-    {{state}} {{city}}
-    {{street}}
     {{country}}
 kr: 
   name: South Korea

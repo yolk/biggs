@@ -1,7 +1,11 @@
+h3. biggs 0.1.4 - 2009-5-21
+
+* Fixed Specs
+
 h3. biggs 0.1.3 - 2009-3-6
 
 * Correct japanese address format. [hiroshi]
-* Fixes docs for current API. [hiroshi]
+* Fixed docs for current API. [hiroshi]
 
 h3. biggs 0.1.2 - 2009-3-4
 

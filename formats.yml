@@ -309,7 +309,7 @@ nl:
     {{street}}
     {{zip}} {{city}}
     {{country}}
-no: 
+"no": 
   name: Norway
   format: |-
     {{recipient}}

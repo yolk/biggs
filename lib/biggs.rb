@@ -1,4 +1,5 @@
 require 'biggs/formatter'
+require 'yaml'
 
 module Biggs
   class << self

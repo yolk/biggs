@@ -281,6 +281,13 @@ lb:
     {{street}}
     {{zip}} {{city}}
     {{country}}
+li:
+  name: Liechtenstein
+  format: |-
+    {{recipient}}
+    {{street}}
+    {{zip}} {{city}}
+    {{country}}
 lu: 
   name: Luxembourg
   format: |-

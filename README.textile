@@ -110,6 +110,7 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Jordan
 * Kuwait
 * Lebanon
+* Lichtenstein
 * Luxembourg
 * Macedonia
 * Mexico
@@ -135,6 +136,7 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Switzerland
 * Syrian Arab Republic
 * Taiwan
+* s
 * Turkey
 * Ukraine
 * United Arab Emirates

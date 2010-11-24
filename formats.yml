@@ -424,12 +424,12 @@ sy:
     {{street}}
     {{zip}} {{city}}
     {{country}}
-tr: 
-  name: Turkey
+th: 
+  name: Thailand
   format: |-
     {{recipient}}
     {{street}}
-    {{zip}} {{city}}
+    {{city}} {{zip}}
     {{country}}
 tw: 
   name: Taiwan
@@ -437,6 +437,13 @@ tw:
     {{recipient}}
     {{street}}
     {{city}} {{state}} {{zip}}
+    {{country}}
+tr: 
+  name: Turkey
+  format: |-
+    {{recipient}}
+    {{street}}
+    {{zip}} {{city}}
     {{country}}
 ua: 
   name: Ukraine

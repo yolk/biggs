@@ -136,7 +136,7 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Switzerland
 * Syrian Arab Republic
 * Taiwan
-* s
+* Thailand
 * Turkey
 * Ukraine
 * United Arab Emirates

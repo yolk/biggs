@@ -429,7 +429,7 @@ th:
   format: |-
     {{recipient}}
     {{street}}
-    {{city}} {{zip}}
+    {{city}} {{state}} {{zip}}
     {{country}}
 tw: 
   name: Taiwan

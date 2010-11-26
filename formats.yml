@@ -431,19 +431,19 @@ th:
     {{street}}
     {{city}} {{state}} {{zip}}
     {{country}}
-tw: 
-  name: Taiwan
-  format: |-
-    {{recipient}}
-    {{street}}
-    {{city}} {{state}} {{zip}}
-    {{country}}
 tr: 
   name: Turkey
   format: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
+    {{country}}
+tw: 
+  name: Taiwan
+  format: |-
+    {{recipient}}
+    {{street}}
+    {{city}} {{state}} {{zip}}
     {{country}}
 ua: 
   name: Ukraine

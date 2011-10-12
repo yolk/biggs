@@ -309,6 +309,13 @@ mx:
     {{street}}
     {{zip}} {{city}} {{state}}
     {{country}}
+nc: 
+  name: New Caledonia
+  format: |-
+    {{recipient}}
+    {{street}}
+    {{zip}} {{city}}
+    {{country}}
 nl: 
   name: Netherlands
   format: |-

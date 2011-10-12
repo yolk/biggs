@@ -34,6 +34,10 @@ describe Biggs::Formatter, "with defaults" do
   it "should format to no(rwegian) format" do
     @biggs.format('no', FAKE_ATTR_WITH_STATE).should eql("MR. X\nSTREET\n12345 CITY\nNorway")
   end
+
+  it "should format to NC format" do
+    @biggs.format('nc', FAKE_ATTR_WITH_STATE).should eql("MR. X\nSTREET\n12345 CITY\nNew Caledonia")
+  end
   
 end
 

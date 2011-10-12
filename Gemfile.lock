@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    biggs (0.1.5)
+    biggs (0.2.0)
       activerecord (>= 3.0)
 
 GEM

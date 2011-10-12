@@ -115,6 +115,7 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Macedonia
 * Mexico
 * Netherlands
+* New Caledonia
 * New Zealand
 * Norway
 * Oman

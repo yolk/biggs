@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     biggs (0.2.0)
-      activerecord (>= 3.0)
+      activerecord (~> 3.0)
 
 GEM
   remote: http://rubygems.org/

@@ -1,3 +1,7 @@
+h3. biggs 0.2.1 - 2011-11-09
+
+* Fixed gemspec activerecord dependency
+
 h3. biggs 0.2.0 - 2011-10-12
 
 * Added Bundler & removed jewler

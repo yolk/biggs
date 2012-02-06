@@ -1,4 +1,4 @@
-require 'active_support/core_ext/class/inheritable_attributes'
+require 'active_support/core_ext/class/attribute'
 
 module Biggs
   module ActiveRecordAdapter
@@ -9,7 +9,9 @@ module Biggs
     
     module InitialClassMethods
       def biggs(method_name=nil, options={})
-        self.extend(ClassMethods)
+        self.class_attribute :biggs_value_methods
+        self.class_attribute :biggs_instance
+
         self.send(:include, Biggs::ActiveRecordAdapter::InstanceMethods)
         alias_method(method_name || :postal_address, :biggs_postal_address)
 
@@ -17,18 +19,9 @@ module Biggs
         Biggs::Formatter::FIELDS.each do |field|
           value_methods[field] = options.delete(field) if options[field]
         end
-        write_inheritable_attribute(:biggs_value_methods, value_methods)
-        write_inheritable_attribute(:biggs_formatter, Biggs::Formatter.new(options))
-      end
-    end
-    
-    module ClassMethods
-      def biggs_value_methods
-        read_inheritable_attribute(:biggs_value_methods) || write_inheritable_attribute(:biggs_value_methods, {})
-      end
-      
-      def biggs_instance
-        read_inheritable_attribute(:biggs_formatter) || write_inheritable_attribute(:biggs_formatter, Biggs::Formatter.new)
+        
+        self.biggs_value_methods = value_methods
+        self.biggs_instance = Biggs::Formatter.new(options)
       end
     end
     

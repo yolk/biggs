@@ -145,6 +145,6 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * United States
 * Yemen
 
-biggs is tested to behave well with Rails 2.2.2.
+biggs is tested to behave well with Rails 3.0
 
 Copyright (c) 2009 Yolk Sebastian Munz & Julia Soergel GbR

@@ -147,4 +147,4 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 
 biggs is tested to behave well with Rails 3.0
 
-Copyright (c) 2009 Yolk Sebastian Munz & Julia Soergel GbR
+Copyright (c) 2009-2012 Yolk Sebastian Munz & Julia Soergel GbR

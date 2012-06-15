@@ -106,7 +106,7 @@ describe "ActiveRecord Instance" do
     end
   
     it "should return postal_address on postal_address" do
-      FooBar.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nUnited States")
+      FooBar.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nUnited States of America")
     end
   end
 
@@ -128,7 +128,7 @@ describe "ActiveRecord Instance" do
     end
     
     it "should return formatted address on my_postal_address_method" do
-      FooBarCustomMethod.new.my_postal_address_method.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nUnited States")
+      FooBarCustomMethod.new.my_postal_address_method.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nUnited States of America")
     end
   end
   
@@ -140,7 +140,7 @@ describe "ActiveRecord Instance" do
   
   describe "Customized array of symbols" do
     it "should return formatted address with two lines for street" do
-      FooBarCustomArray.new.postal_address.should eql("RECIPIENT\nAddress line 1\nAddress line 2\nCITY STATE ZIP\nUnited States")
+      FooBarCustomArray.new.postal_address.should eql("RECIPIENT\nAddress line 1\nAddress line 2\nCITY STATE ZIP\nUnited States of America")
     end
   end
 

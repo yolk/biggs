@@ -8,7 +8,7 @@ describe Biggs::Formatter, "with defaults" do
   before { @biggs = Biggs::Formatter.new }
   
   it "should format to us format" do
-    @biggs.format('us', FAKE_ATTR_WITH_STATE).should eql("MR. X\nSTREET\nCITY STATE 12345\nUnited States")
+    @biggs.format('us', FAKE_ATTR_WITH_STATE).should eql("MR. X\nSTREET\nCITY STATE 12345\nUnited States of America")
   end
   
   it "should format to de format" do
@@ -37,6 +37,14 @@ describe Biggs::Formatter, "with defaults" do
 
   it "should format to NC format" do
     @biggs.format('nc', FAKE_ATTR_WITH_STATE).should eql("MR. X\nSTREET\n12345 CITY\nNew Caledonia")
+  end
+  
+  it "should use country name if Country is known but format not" do
+    @biggs.format('af', FAKE_ATTR_WO_STATE).should eql("MR. X\nSTREET\n12345 CITY\nAfghanistan")
+  end
+  
+  it "should use ISO Code if Country is unknown" do
+    @biggs.format('xx', FAKE_ATTR_WO_STATE).should eql("MR. X\nSTREET\n12345 CITY\nxx")
   end
   
 end

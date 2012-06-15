@@ -142,7 +142,7 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Ukraine
 * United Arab Emirates
 * United Kingdom
-* United States
+* United States of America
 * Yemen
 
 biggs is tested to behave well with Rails 3.0

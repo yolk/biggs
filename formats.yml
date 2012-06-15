@@ -7,233 +7,169 @@
 #   * country
 #
 --- 
-ae: 
-  name: United Arab Emirates
-  format: |-
+ae: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-ar: 
-  name: Argentina
-  format: |-
+ar: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{state}}
     {{country}}
-at: 
-  name: Austria
-  format: |-
+at: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-au: 
-  name: Australia
-  format: |-
+au: |-
     {{recipient}}
     {{street}}
     {{city}} {{state}} {{zip}}
     {{country}}
-ba: 
-  name: Bosnia and Herzegovina
-  format: |-
+ba: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-be: 
-  name: Belgium
-  format: |-
+be: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-bg: 
-  name: Bulgaria
-  format: |-
+bg: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-bh: 
-  name: Bahrain
-  format: |-
+bh: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-br: 
-  name: Brazil
-  format: |-
+br: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}} {{state}}
     {{country}}
-ca: 
-  name: Canada
-  format: |-
+ca: |-
     {{recipient}}
     {{street}}
     {{city}} {{state}} {{zip}}
     {{country}}
-ch: 
-  name: Switzerland
-  format: |-
+ch: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-cn: 
-  name: China
-  format: |-
+cn: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}} {{state}}
     {{country}}
-cz: 
-  name: Czech
-  format: |-
+cz: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-de: 
-  name: Germany
-  format: |-
+de: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-dk: 
-  name: Denmark
-  format: |-
+dk: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{state}}
     {{country}}
-eg: 
-  name: Egypt
-  format: |-
+eg: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-es: 
-  name: Spain
-  format: |-
+es: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}} {{state}}
     {{country}}
-fi: 
-  name: Finland
-  format: |-
+fi: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-fr: 
-  name: France
-  format: |-
+fr: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-gb: 
-  name: United Kingdom
-  format: |-
+gb: |-
     {{recipient}}
     {{street}}
     {{city}}
     {{state}}
     {{zip}}
     {{country}}
-gl: 
-  name: Greenland
-  format: |-
+gl: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-gr: 
-  name: Greece
-  format: |-
+gr: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-hk: 
-  name: Hong Kong
-  format: |-
+hk: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}} {{state}}
     {{country}}
-hr: 
-  name: Croatia
-  format: |-
+hr: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-hu: 
-  name: Hungary
-  format: |-
+hu: |-
     {{recipient}}
     {{city}}
     {{street}}
     {{zip}}
     {{country}}
-id: 
-  name: Indonesia
-  format: |-
+id: |-
     {{recipient}}
     {{street}}
     {{city}}
     {{state}} {{zip}}
     {{country}}
-ie: 
-  name: Ireland
-  format: |-
+ie: |-
     {{recipient}}
     {{street}}
     {{city}} {{state}} {{zip}}
     {{country}}
-il: 
-  name: Israel
-  format: |-
+il: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-in: 
-  name: India
-  format: |-
+in: |-
     {{recipient}}
     {{street}}
     {{state}}
     {{city}} {{zip}}
     {{country}}
-is: 
-  name: Iceland
-  format: |-
+is: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-it: 
-  name: Italy
-  format: |-
+it: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}} {{state}}
     {{country}}
-jo: 
-  name: Jordan
-  format: |-
+jo: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
@@ -251,241 +187,176 @@ jo:
 #  〒163-1480
 #  東京都新宿区西新宿3-20-2
 #  アップルジャパン株式会社 本社
-jp: 
-  name: Japan
-  format: |-
+jp: |-
     〒{{zip}}
     {{state}}{{city}}{{street}}
     {{recipient}}
     {{country}}
-kr: 
-  name: South Korea
-  format: |-
+kr: |-
     {{recipient}}
     {{street}}
     {{city}} {{state}}
     {{zip}}
     {{country}}
-kw: 
-  name: Kuwait
-  format: |-
+kw: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{state}}
     {{country}}
-lb: 
-  name: Lebanon
-  format: |-
+lb: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
 li:
-  name: Liechtenstein
   format: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-lu: 
-  name: Luxembourg
-  format: |-
+lu: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-mk: 
-  name: Macedonia
-  format: |-
+mk: |-
     {{recipient}}
     {{street}}
     {{city}} {{zip}}
     {{country}}
-mx: 
-  name: Mexico
-  format: |-
+mx: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}} {{state}}
     {{country}}
-nc: 
-  name: New Caledonia
-  format: |-
+nc: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-nl: 
-  name: Netherlands
-  format: |-
+nl: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-"no": 
-  name: Norway
-  format: |-
+"no": |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-nz: 
-  name: New Zealand
-  format: |-
+nz: |-
     {{recipient}}
     {{street}}
     {{state}}
     {{city}} {{zip}}
     {{country}}
-om: 
-  name: Oman
-  format: |-
+om: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{state}}
     {{country}}
-ph: 
-  name: Philippines
-  format: |-
+ph: |-
     {{recipient}}
     {{street}} {{state}}
     {{zip}} {{city}}
     {{country}}
-pl: 
-  name: Poland
-  format: |-
+pl: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{state}}
     {{country}}
-pt: 
-  name: Portugal
-  format: |-
+pt: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}} {{state}}
     {{country}}
-qa: 
-  name: Qatar
-  format: |-
+qa: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-ro: 
-  name: Romania
-  format: |-
+ro: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-ru: 
-  name: Russian Federation
-  format: |-
+ru: |-
     {{recipient}}
     {{zip}} {{city}}
     {{street}}
     {{country}}
-sa: 
-  name: Saudi Arabia
-  format: |-
+sa: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-se: 
-  name: Sweden
-  format: |-
+se: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-sg: 
-  name: Singapore
-  format: |-
+sg: |-
     {{recipient}}
     {{street}}
     {{city}} {{zip}}
     {{country}}
-si: 
-  name: Slovenia
-  format: |-
+si: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-sk: 
-  name: Slovakia
-  format: |-
+sk: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-sy: 
-  name: Syrian Arab Republic
-  format: |-
+sy: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-th: 
-  name: Thailand
-  format: |-
+th: |-
     {{recipient}}
     {{street}}
     {{city}} {{state}} {{zip}}
     {{country}}
-tr: 
-  name: Turkey
-  format: |-
+tr: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-tw: 
-  name: Taiwan
-  format: |-
+tw: |-
     {{recipient}}
     {{street}}
     {{city}} {{state}} {{zip}}
     {{country}}
-ua: 
-  name: Ukraine
-  format: |-
+ua: |-
     {{recipient}}
     {{street}}
     {{city}} {{state}}
     {{zip}}
     {{country}}
-us: 
-  name: United States
-  format: |-
+us: |-
     {{recipient}}
     {{street}}
     {{city}} {{state}} {{zip}}
     {{country}}
-ye: 
-  name: Yemen
-  format: |-
+ye: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     {{country}}
-yu: 
-  name: Serbia and Montenegro
-  format: |-
+yu: |-
     {{recipient}}
     {{street}}
     {{zip}} {{city}}
     
     {{state}}
     {{country}}
-za: 
-  name: South Africa
-  format: |-
+za: |-
     {{recipient}}
     {{street}}
     {{city}}

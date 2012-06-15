@@ -1,5 +1,9 @@
 ### dev
 
+### 0.3.0 / 2012-06-15
+
+* Added country names for countries with default/unknown address format
+* Simplified inclusion of Biggs::ActiveRecordAdapter
 * Changed doc-format from textile to markdown
 
 ### 0.2.2 / 2012-02-06

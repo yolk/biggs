@@ -209,12 +209,11 @@ lb: |-
     {{street}}
     {{zip}} {{city}}
     {{country}}
-li:
-  format: |-
-    {{recipient}}
-    {{street}}
-    {{zip}} {{city}}
-    {{country}}
+li: |-
+  {{recipient}}
+  {{street}}
+  {{zip}} {{city}}
+  {{country}}
 lu: |-
     {{recipient}}
     {{street}}

@@ -1,5 +1,7 @@
 ### dev
 
+* Fixed LI format
+
 ### 0.3.0 / 2012-06-15
 
 * Added country names for countries with default/unknown address format

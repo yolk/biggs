@@ -4,7 +4,7 @@ biggs is a small ruby gem/rails plugin for formatting postal addresses from over
 
 As a ruby gem:
    
-    sudo gem install yolk-biggs
+    sudo gem install biggs
    
 If your rather prefer to install it as a plugin for rails, from your application directory simply run:
    

@@ -1,5 +1,9 @@
 ### dev
 
+### 0.3.2 / 2013-02-19
+
+* Fixed warning in Biggs::Format
+
 ### 0.3.1 / 2012-08-02
 
 * Fixed LI format

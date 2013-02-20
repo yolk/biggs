@@ -1,2 +1,3 @@
 biggs-*.*.*.gem
 Gemfile.lock
+.rbenv-*

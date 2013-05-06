@@ -1,5 +1,9 @@
 ### dev
 
+### 0.3.3 / 2013-05-06
+
+* Added support for Rails 4 (by [mdemare](https://github.com/mdemare))
+
 ### 0.3.2 / 2013-02-19
 
 * Fixed warning in Biggs::Format
@@ -39,8 +43,8 @@
 
 ### 0.1.3 / 2009-3-6
 
-* Correct japanese address format. [hiroshi]
-* Fixed docs for current API. [hiroshi]
+* Correct japanese address format. (by [hiroshi](https://github.com/hiroshi))
+* Fixed docs for current API. (by [hiroshi](https://github.com/hiroshi))
 
 ### 0.1.2 / 2009-3-4
 

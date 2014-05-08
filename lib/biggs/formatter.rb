@@ -1,12 +1,12 @@
 module Biggs
   class Formatter
-    
-    FIELDS = [:recipient, :street, :city, :state, :zip, :country]
-    
+
+    FIELDS = [:recipient, :street, :number, :city, :state, :zip, :country]
+
     def initialize(options={})
       @blank_country_on = [options[:blank_country_on]].compact.flatten.map{|s| s.to_s.downcase}
     end
-  
+
     def format(iso_code, values={})
       values.symbolize_keys! if values.respond_to?(:symbolize_keys!)
 
@@ -20,16 +20,16 @@ module Biggs
       format_string.gsub!(/\{\{country\}\}/, country_name)
       format_string.gsub(/\n$/, "")
     end
-  
+
     attr_accessor :blank_country_on, :default_country_without_state, :default_country_with_state
-  
+
     private
-    
+
     def default_format_string(state)
       state && state != "" ?
         Biggs.formats[default_country_with_state || "us"] :
         Biggs.formats[default_country_without_state || "fr"]
     end
   end
-  
+
 end

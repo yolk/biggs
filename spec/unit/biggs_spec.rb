@@ -47,6 +47,11 @@ describe Biggs::Formatter, "with defaults" do
     @biggs.format('xx', FAKE_ATTR_WO_STATE).should eql("MR. X\nSTREET NUMBER\n12345 CITY\nxx")
   end
 
+  it 'should take an array as address format it as multi-line value' do
+    format = {:state => "STATE", :city => "CITY", :zip => 12345, :street => ["STREET", "STREET2"], :number => 'NUMBER', :recipient => "MR. X"}
+    @biggs.format('us', format).should eql("MR. X\nNUMBER STREET\nSTREET2\nCITY STATE 12345\nUnited States of America")
+  end
+
 end
 
 describe Biggs, "with options" do

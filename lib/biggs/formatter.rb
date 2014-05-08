@@ -15,8 +15,9 @@ module Biggs
       country_name = blank_country_on.include?(format.iso_code) ? "" : format.country_name || format.iso_code
 
       (FIELDS - [:country]).each do |key|
-        format_string.gsub!(/\{\{#{key}\}\}/, (values[key] || "").to_s)
+        format_string.gsub!(/\{\{#{key}\}\}/, (values[key].is_a?(Array) ? values[key].compact.join("\n") : values[key] || "").to_s)
       end
+
       format_string.gsub!(/\{\{country\}\}/, country_name)
       format_string.gsub(/\n$/, "")
     end

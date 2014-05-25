@@ -1,177 +1,211 @@
 # Avaible placeholders:
 #   * recipient
 #   * street
+#   * number
+#   * addition
 #   * zip
 #   * city
 #   * state
 #   * country
 #
---- 
+---
 ae: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 ar: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{state}}
     {{country}}
 at: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 au: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}} {{state}} {{zip}}
     {{country}}
 ba: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 be: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 bg: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 bh: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 br: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}} {{state}}
     {{country}}
 ca: |-
     {{recipient}}
-    {{street}}
+    {{number}} {{street}}
+    {{addition}}
     {{city}} {{state}} {{zip}}
     {{country}}
 ch: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 cn: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}} {{state}}
     {{country}}
 cz: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 de: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 dk: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{state}}
     {{country}}
 eg: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 es: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}} {{state}}
     {{country}}
 fi: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 fr: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 gb: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}}
     {{state}}
     {{zip}}
     {{country}}
 gl: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 gr: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 hk: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}} {{state}}
     {{country}}
 hr: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 hu: |-
     {{recipient}}
     {{city}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}}
     {{country}}
 id: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}}
     {{state}} {{zip}}
     {{country}}
 ie: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}} {{state}} {{zip}}
     {{country}}
 il: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 in: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{state}}
     {{city}} {{zip}}
     {{country}}
 is: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 it: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}} {{state}}
     {{country}}
 jo: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 # Here is a sample of Japanese formatted addresses (Apple Japan HQ).
@@ -189,175 +223,208 @@ jo: |-
 #  アップルジャパン株式会社 本社
 jp: |-
     〒{{zip}}
-    {{state}}{{city}}{{street}}
+    {{state}}{{city}}{{street}}{{number}}
+    {{addition}}
     {{recipient}}
     {{country}}
 kr: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}} {{state}}
     {{zip}}
     {{country}}
 kw: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{state}}
     {{country}}
 lb: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 li: |-
   {{recipient}}
-  {{street}}
+    {{street}} {{number}}
+    {{addition}}
   {{zip}} {{city}}
   {{country}}
 lu: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 mk: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}} {{zip}}
     {{country}}
 mx: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}} {{state}}
     {{country}}
 nc: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 nl: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 "no": |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 nz: |-
     {{recipient}}
-    {{street}}
+    {{number}} {{street}}
+    {{addition}}
     {{state}}
     {{city}} {{zip}}
     {{country}}
 om: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{state}}
     {{country}}
 ph: |-
     {{recipient}}
-    {{street}} {{state}}
+    {{street}} {{number}} {{state}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 pl: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{state}}
     {{country}}
 pt: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}} {{state}}
     {{country}}
 qa: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 ro: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 ru: |-
     {{recipient}}
     {{zip}} {{city}}
-    {{street}}
+    {{addition}}
+    {{street}} {{number}}
     {{country}}
 sa: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 se: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 sg: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}} {{zip}}
     {{country}}
 si: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 sk: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 sy: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 th: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}} {{state}} {{zip}}
     {{country}}
 tr: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 tw: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}} {{state}} {{zip}}
     {{country}}
 ua: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}} {{state}}
     {{zip}}
     {{country}}
 us: |-
     {{recipient}}
-    {{street}}
+    {{number}} {{street}}
+    {{addition}}
     {{city}} {{state}} {{zip}}
     {{country}}
 ye: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
     {{country}}
 yu: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{zip}} {{city}}
-    
+
     {{state}}
     {{country}}
 za: |-
     {{recipient}}
-    {{street}}
+    {{street}} {{number}}
+    {{addition}}
     {{city}}
     {{state}}
     {{zip}}

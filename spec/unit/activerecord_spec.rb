@@ -106,19 +106,19 @@ describe "ActiveRecord Instance" do
     end
 
     it "should return postal_address on postal_address" do
-      FooBar.new.postal_address.should eql("RECIPIENT\nNUMBER STREET\nCITY STATE ZIP\nUnited States of America")
+      FooBar.new.postal_address.should eql("RECIPIENT\nNUMBER STREET\nADDITION\nCITY STATE ZIP\nUnited States of America")
     end
   end
 
   describe "Customized Fields" do
     it "should return address from custom fields on postal_address" do
-      FooBarCustomFields.new.postal_address.should eql("RECIPIENT\nSTREET NUMBER\nZIP Hamburg\nGermany")
+      FooBarCustomFields.new.postal_address.should eql("RECIPIENT\nSTREET NUMBER\nADDITION\nZIP Hamburg\nGermany")
     end
   end
 
   describe "Customized Blank DE Country" do
     it "should return address wo country on postal_address" do
-      FooBarCustomBlankDECountry.new.postal_address.should eql("RECIPIENT\nSTREET NUMBER\nZIP CITY")
+      FooBarCustomBlankDECountry.new.postal_address.should eql("RECIPIENT\nSTREET NUMBER\nADDITION\nZIP CITY")
     end
   end
 
@@ -128,19 +128,19 @@ describe "ActiveRecord Instance" do
     end
 
     it "should return formatted address on my_postal_address_method" do
-      FooBarCustomMethod.new.my_postal_address_method.should eql("RECIPIENT\nNUMBER STREET\nCITY STATE ZIP\nUnited States of America")
+      FooBarCustomMethod.new.my_postal_address_method.should eql("RECIPIENT\nNUMBER STREET\nADDITION\nCITY STATE ZIP\nUnited States of America")
     end
   end
 
   describe "Customized Proc as Param" do
     it "should return formatted address for unknown-country DEXX" do
-      FooBarCustomProc.new.postal_address.should eql("RECIPIENT\nNUMBER STREET\nCITY state ZIP\ndexx")
+      FooBarCustomProc.new.postal_address.should eql("RECIPIENT\nNUMBER STREET\nADDITION\nCITY state ZIP\ndexx")
     end
   end
 
   describe "Customized array of symbols" do
     it "should return formatted address with two lines for street" do
-      FooBarCustomArray.new.postal_address.should eql("RECIPIENT\nNUMBER Address line 1\nAddress line 2\nCITY STATE ZIP\nUnited States of America")
+      FooBarCustomArray.new.postal_address.should eql("RECIPIENT\nNUMBER Address line 1\nAddress line 2\nADDITION\nCITY STATE ZIP\nUnited States of America")
     end
   end
 

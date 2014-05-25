@@ -8,7 +8,7 @@ describe Biggs::Format do
       it{ should be_kind_of(Biggs::Format) }
       its(:country_name){ should eql("China") }
       its(:iso_code){ should eql("cn") }
-      its(:format_string){ should eql("{{recipient}}\n{{street}} {{number}}\n{{zip}} {{city}} {{state}}\n{{country}}") }
+      its(:format_string){ should eql("{{recipient}}\n{{street}} {{number}}\n{{addition}}\n{{zip}} {{city}} {{state}}\n{{country}}") }
     end
 
     context "known country with unknown format" do

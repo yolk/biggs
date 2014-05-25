@@ -1,7 +1,7 @@
 module Biggs
   class Formatter
 
-    FIELDS = [:recipient, :street, :number, :city, :state, :zip, :country]
+    FIELDS = [:recipient, :street, :number, :addition, :city, :state, :zip, :country]
 
     def initialize(options={})
       @blank_country_on = [options[:blank_country_on]].compact.flatten.map{|s| s.to_s.downcase}

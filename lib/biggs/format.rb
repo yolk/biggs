@@ -1,11 +1,12 @@
 module Biggs
   class Format
-    attr_reader :country_name, :iso_code, :format_string
+    attr_reader :country_name, :iso_code, :format_string, :country
 
     def initialize(iso_code)
-      @iso_code = iso_code.to_s.downcase
-      @country_name = Biggs.country_names[@iso_code]
-      @format_string = Biggs.formats[@iso_code]
+      @iso_code      = iso_code.to_s.downcase
+      @country       = Biggs.country[@iso_code]
+      @country_name  = @country ? @country.name : nil
+      @format_string = @country ? @country.address_format : nil
     end
 
     class << self

@@ -44,7 +44,7 @@ end
 class FooBarCustomProc < BaseTable
   biggs :postal_address, 
         :country => Proc.new {|it| it.method_accessed_from_proc + "XX"}, 
-        :state => Proc.new {|it| it.state.downcase }
+        :region => Proc.new {|it| it.region.downcase }
   
   def method_accessed_from_proc
     "DE"
@@ -106,19 +106,19 @@ describe "ActiveRecord Instance" do
     end
   
     it "should return postal_address on postal_address" do
-      FooBar.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nUnited States of America")
+      FooBar.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY REGION POSTALCODE\nUnited States")
     end
   end
 
   describe "Customized Fields" do
     it "should return address from custom fields on postal_address" do
-      FooBarCustomFields.new.postal_address.should eql("RECIPIENT\nSTREET\nZIP Hamburg\nGermany")
+      FooBarCustomFields.new.postal_address.should eql("RECIPIENT\nSTREET\nPOSTALCODE Hamburg\nGermany")
     end
   end
 
   describe "Customized Blank DE Country" do
     it "should return address wo country on postal_address" do
-      FooBarCustomBlankDECountry.new.postal_address.should eql("RECIPIENT\nSTREET\nZIP CITY")
+      FooBarCustomBlankDECountry.new.postal_address.should eql("RECIPIENT\nSTREET\nPOSTALCODE CITY")
     end
   end
   
@@ -128,19 +128,19 @@ describe "ActiveRecord Instance" do
     end
     
     it "should return formatted address on my_postal_address_method" do
-      FooBarCustomMethod.new.my_postal_address_method.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nUnited States of America")
+      FooBarCustomMethod.new.my_postal_address_method.should eql("RECIPIENT\nSTREET\nCITY REGION POSTALCODE\nUnited States")
     end
   end
   
   describe "Customized Proc as Param" do
     it "should return formatted address for unknown-country DEXX" do
-      FooBarCustomProc.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY state ZIP\ndexx")
+      FooBarCustomProc.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY region POSTALCODE\ndexx")
     end
   end
   
   describe "Customized array of symbols" do
     it "should return formatted address with two lines for street" do
-      FooBarCustomArray.new.postal_address.should eql("RECIPIENT\nAddress line 1\nAddress line 2\nCITY STATE ZIP\nUnited States of America")
+      FooBarCustomArray.new.postal_address.should eql("RECIPIENT\nAddress line 1\nAddress line 2\nCITY REGION POSTALCODE\nUnited States")
     end
   end
 

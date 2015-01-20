@@ -75,20 +75,20 @@ end
 describe 'ActiveRecord Class' do
 
   it 'should include Biggs::ActiveRecordAdapter' do
-    FooBar.included_modules.should be_include(Biggs::ActiveRecordAdapter)
+    expect(FooBar.included_modules).to be_include(Biggs::ActiveRecordAdapter)
   end
 
   it 'should set class value biggs_value_methods' do
-    FooBar.class_eval('biggs_value_methods').should be_is_a(Hash)
-    FooBar.class_eval('biggs_value_methods').size.should be_zero
+    expect(FooBar.class_eval('biggs_value_methods')).to be_is_a(Hash)
+    expect(FooBar.class_eval('biggs_value_methods').size).to be_zero
   end
 
   it 'should set class value biggs_instance' do
-    FooBar.class_eval('biggs_instance').should be_is_a(Biggs::Formatter)
+    expect(FooBar.class_eval('biggs_instance')).to be_is_a(Biggs::Formatter)
   end
 
   it 'should respond to biggs' do
-    FooBar.should be_respond_to(:biggs)
+    expect(FooBar).to be_respond_to(:biggs)
   end
 end
 
@@ -96,51 +96,51 @@ describe 'ActiveRecord Instance' do
 
   describe 'Empty' do
     it 'should not have postal_address method' do
-      FooBarEmpty.new.should_not be_respond_to(:postal_address)
+      expect(FooBarEmpty.new).not_to be_respond_to(:postal_address)
     end
   end
 
   describe 'Standard' do
     it 'should have postal_address method' do
-      FooBar.new.should be_respond_to(:postal_address)
+      expect(FooBar.new).to be_respond_to(:postal_address)
     end
 
     it 'should return postal_address on postal_address' do
-      FooBar.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY REGION POSTALCODE\nUnited States")
+      expect(FooBar.new.postal_address).to eql("RECIPIENT\nSTREET\nCITY REGION POSTALCODE\nUnited States")
     end
   end
 
   describe 'Customized Fields' do
     it 'should return address from custom fields on postal_address' do
-      FooBarCustomFields.new.postal_address.should eql("RECIPIENT\nSTREET\nPOSTALCODE Hamburg\nGermany")
+      expect(FooBarCustomFields.new.postal_address).to eql("RECIPIENT\nSTREET\nPOSTALCODE Hamburg\nGermany")
     end
   end
 
   describe 'Customized Blank DE Country' do
     it 'should return address wo country on postal_address' do
-      FooBarCustomBlankDECountry.new.postal_address.should eql("RECIPIENT\nSTREET\nPOSTALCODE CITY")
+      expect(FooBarCustomBlankDECountry.new.postal_address).to eql("RECIPIENT\nSTREET\nPOSTALCODE CITY")
     end
   end
 
   describe 'Customized Method name' do
     it 'should have my_postal_address_method' do
-      FooBarCustomMethod.new.should be_respond_to(:my_postal_address_method)
+      expect(FooBarCustomMethod.new).to be_respond_to(:my_postal_address_method)
     end
 
     it 'should return formatted address on my_postal_address_method' do
-      FooBarCustomMethod.new.my_postal_address_method.should eql("RECIPIENT\nSTREET\nCITY REGION POSTALCODE\nUnited States")
+      expect(FooBarCustomMethod.new.my_postal_address_method).to eql("RECIPIENT\nSTREET\nCITY REGION POSTALCODE\nUnited States")
     end
   end
 
   describe 'Customized Proc as Param' do
     it 'should return formatted address for unknown-country DEXX' do
-      FooBarCustomProc.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY region POSTALCODE\ndexx")
+      expect(FooBarCustomProc.new.postal_address).to eql("RECIPIENT\nSTREET\nCITY region POSTALCODE\ndexx")
     end
   end
 
   describe 'Customized array of symbols' do
     it 'should return formatted address with two lines for street' do
-      FooBarCustomArray.new.postal_address.should eql("RECIPIENT\nAddress line 1\nAddress line 2\nCITY REGION POSTALCODE\nUnited States")
+      expect(FooBarCustomArray.new.postal_address).to eql("RECIPIENT\nAddress line 1\nAddress line 2\nCITY REGION POSTALCODE\nUnited States")
     end
   end
 

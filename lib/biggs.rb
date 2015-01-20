@@ -10,7 +10,7 @@ module Biggs
   end
 end
 
-if defined?(ActiveRecord) and defined?(ActiveRecord::Base) and !ActiveRecord::Base.respond_to?(:biggs_formatter)
+if defined?(ActiveRecord) && defined?(ActiveRecord::Base) && !ActiveRecord::Base.respond_to?(:biggs_formatter)
   require 'biggs/activerecord'
   ActiveRecord::Base.send :include, Biggs::ActiveRecordAdapter
 end

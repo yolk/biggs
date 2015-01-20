@@ -90,7 +90,7 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Canada
 * China
 * Croatia
-* Czech
+* Czech Republic
 * Denmark
 * Egypt
 * Finland
@@ -108,11 +108,12 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Italy
 * Japan
 * Jordan
+* Korea, Republic of
 * Kuwait
 * Lebanon
-* Lichtenstein
+* Liechtenstein
 * Luxembourg
-* Macedonia
+* Macedonia, the Former Yugoslav Republic Of
 * Mexico
 * Netherlands
 * New Caledonia
@@ -126,17 +127,15 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Romania
 * Russian Federation
 * Saudi Arabia
-* Serbia and Montenegro
 * Singapore
 * Slovakia
 * Slovenia
 * South Africa
-* South Korea
 * Spain
 * Sweden
 * Switzerland
 * Syrian Arab Republic
-* Taiwan
+* Taiwan, Republic Of China
 * Thailand
 * Turkey
 * Ukraine

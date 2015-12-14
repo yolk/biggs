@@ -31,9 +31,9 @@ returns
 
 At the moment Biggs::Formatter.new accepts only one option:
 
-*blank_county_on* ISO alpha 2 code (single string or array) of countries the formatter should skip the line "country" (for national shipping).
+*blank_country_on* ISO alpha 2 code (single string or array) of countries the formatter should skip the line "country" (for national shipping).
 
-    Biggs::Formatter.new(:blank_county_on => "de")
+    Biggs::Formatter.new(:blank_country_on => "de")
 
 With the data from the above example this would return:
 

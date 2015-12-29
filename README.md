@@ -18,8 +18,8 @@ If your rather prefer to install it as a plugin for rails, from your application
       :recipient  => "Yolk Sebastian Munz & Julia Soergel GbR",
       :street     => "Adalbertstr. 11", # <= street + house number
       :city       => "Berlin",
-      :zip        => 10999,
-      :state      => "Berlin" # <= state/province/region
+      :postalcode        => 10999,
+      :region      => "Berlin" # <= region/province/region
     )
 
 returns
@@ -47,13 +47,13 @@ With the data from the above example this would return:
       biggs :postal_address
     end
 
-This adds the method postal_address to your Address-model, and assumes the presence of the methods/columns recipient, street, city, zip, state, and country to get the address data. Country should return the ISO-code (e.g. 'us', 'fr', 'de').
+This adds the method postal_address to your Address-model, and assumes the presence of the methods/columns recipient, street, city, postalcode, region, and country to get the address data. Country should return the ISO-code (e.g. 'us', 'fr', 'de').
 
 You can customize the method-names biggs will use by passing in a hash of options:
 
     Address < ActiveRecord::Base
       biggs :postal_address,
-            :zip => :postal_code,
+            :postalcode => :postal_code,
             :country => :country_code,
             :street => Proc.new {|address| "#{address.street} #{address.house_number}" }
     end
@@ -73,7 +73,7 @@ To access the formatted address string, simply call the provided method on an ad
 
     Address.find(1).postal_address
 
-If you pass in a ISO alpha 2 code as :country that is not supported by biggs, it will choose the US-format for addresses with an state specified, and the french/german format for addresses without an state.
+If you pass in a ISO alpha 2 code as :country that is not supported by biggs, it will choose the US-format for addresses with an region specified, and the french/german format for addresses without an region.
 
 ### Supported countries
 
@@ -90,7 +90,7 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Canada
 * China
 * Croatia
-* Czech
+* Czech Republic
 * Denmark
 * Egypt
 * Finland
@@ -108,11 +108,12 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Italy
 * Japan
 * Jordan
+* Korea, Republic of
 * Kuwait
 * Lebanon
-* Lichtenstein
+* Liechtenstein
 * Luxembourg
-* Macedonia
+* Macedonia, the Former Yugoslav Republic Of
 * Mexico
 * Netherlands
 * New Caledonia
@@ -126,23 +127,21 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * Romania
 * Russian Federation
 * Saudi Arabia
-* Serbia and Montenegro
 * Singapore
 * Slovakia
 * Slovenia
 * South Africa
-* South Korea
 * Spain
 * Sweden
 * Switzerland
 * Syrian Arab Republic
-* Taiwan
+* Taiwan, Republic Of China
 * Thailand
 * Turkey
 * Ukraine
 * United Arab Emirates
 * United Kingdom
-* United States of America
+* United States
 * Yemen
 
 biggs is tested to behave well with Rails 3.0, 3.1, 3.2 and 4.0

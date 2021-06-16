@@ -343,6 +343,11 @@ us: |-
     {{street}}
     {{city}} {{state}} {{zip}}
     {{country}}
+xk: |-
+    {{recipient}}
+    {{street}}
+    {{zip}} {{city}}
+    {{country}}
 ye: |-
     {{recipient}}
     {{street}}

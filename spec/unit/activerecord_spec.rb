@@ -3,6 +3,8 @@ require 'active_record'
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
 class BaseTable < ActiveRecord::Base
+  include Biggs::ActiveRecordAdapter
+
   Biggs::Formatter::FIELDS.each do |field|
     define_method(field) do
       field == :country ? "us" : field.to_s.upcase
@@ -19,11 +21,11 @@ end
 class FooBarCustomFields < BaseTable
   biggs :postal_address, :country => :my_custom_country_method,
                   :city => :my_custom_city_method
-  
+
   def my_custom_country_method
     "de"
   end
-  
+
   def my_custom_city_method
     "Hamburg"
   end
@@ -31,7 +33,7 @@ end
 
 class FooBarCustomBlankDECountry < BaseTable
   biggs :postal_address, :blank_country_on => "de"
-  
+
   def country
     "DE"
   end
@@ -42,69 +44,74 @@ class FooBarCustomMethod < BaseTable
 end
 
 class FooBarCustomProc < BaseTable
-  biggs :postal_address, 
-        :country => Proc.new {|it| it.method_accessed_from_proc + "XX"}, 
+  biggs :postal_address,
+        :country => Proc.new {|it| it.method_accessed_from_proc + "XX"},
         :state => Proc.new {|it| it.state.downcase }
-  
+
   def method_accessed_from_proc
     "DE"
   end
 end
 
 class FooBarCustomArray < BaseTable
-  biggs :postal_address,  
+  biggs :postal_address,
         :street => [:address_1, :address_empty, :address_nil, :address_2]
-  
+
   def address_1
     "Address line 1"
   end
-  
+
   def address_2
     "Address line 2"
   end
-  
+
   def address_empty
     ""
   end
-  
+
   def address_nil
     nil
   end
 end
 
+class FooBarMultiple < BaseTable
+  biggs :postal_address_one
+  biggs :postal_address_two,
+        country: :alt_country
+
+  def alt_country
+    "Alt country"
+  end
+end
+
 describe "ActiveRecord Class" do
-  
+
   it "should include Biggs::ActiveRecordAdapter" do
     FooBar.included_modules.should be_include(Biggs::ActiveRecordAdapter)
   end
-  
-  it "should set class value biggs_value_methods" do
-    FooBar.class_eval("biggs_value_methods").should be_is_a(Hash)
-    FooBar.class_eval("biggs_value_methods").size.should be_zero
+
+  it "should set class value biggs_config" do
+    FooBar.class_eval("biggs_config").should be_is_a(Hash)
   end
-  
-  it "should set class value biggs_instance" do
-    FooBar.class_eval("biggs_instance").should be_is_a(Biggs::Formatter)
-  end
-  
+
   it "should respond to biggs" do
     FooBar.should be_respond_to(:biggs)
   end
 end
 
 describe "ActiveRecord Instance" do
-  
+
   describe "Empty" do
     it "should not have postal_address method" do
       FooBarEmpty.new.should_not be_respond_to(:postal_address)
     end
   end
-  
+
   describe "Standard" do
     it "should have postal_address method" do
       FooBar.new.should be_respond_to(:postal_address)
     end
-  
+
     it "should return postal_address on postal_address" do
       FooBar.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nUnited States of America")
     end
@@ -121,26 +128,37 @@ describe "ActiveRecord Instance" do
       FooBarCustomBlankDECountry.new.postal_address.should eql("RECIPIENT\nSTREET\nZIP CITY")
     end
   end
-  
+
   describe "Customized Method name" do
     it "should have my_postal_address_method" do
       FooBarCustomMethod.new.should be_respond_to(:my_postal_address_method)
     end
-    
+
     it "should return formatted address on my_postal_address_method" do
       FooBarCustomMethod.new.my_postal_address_method.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nUnited States of America")
     end
   end
-  
+
   describe "Customized Proc as Param" do
     it "should return formatted address for unknown-country DEXX" do
       FooBarCustomProc.new.postal_address.should eql("RECIPIENT\nSTREET\nCITY state ZIP\ndexx")
     end
   end
-  
+
   describe "Customized array of symbols" do
     it "should return formatted address with two lines for street" do
       FooBarCustomArray.new.postal_address.should eql("RECIPIENT\nAddress line 1\nAddress line 2\nCITY STATE ZIP\nUnited States of America")
+    end
+  end
+
+  describe "Multiple" do
+
+    it "should return postal_address on postal_address_one" do
+      FooBarMultiple.new.postal_address_one.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nUnited States of America")
+    end
+
+    it "should return postal_address with alt country on postal_address_two" do
+      FooBarMultiple.new.postal_address_two.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nalt country")
     end
   end
 

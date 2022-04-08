@@ -2,60 +2,56 @@ require 'active_support/core_ext/class/attribute'
 
 module Biggs
   module ActiveRecordAdapter
-    
-    def self.included(base)
-      base.extend(InitialClassMethods)
-    end
-    
-    module InitialClassMethods
-      def biggs(method_name=nil, options={})
-        self.class_attribute :biggs_value_methods
-        self.class_attribute :biggs_instance
+    extend ActiveSupport::Concern
 
-        self.send(:include, Biggs::ActiveRecordAdapter::InstanceMethods)
-        alias_method(method_name || :postal_address, :biggs_postal_address)
+    included do
+      class_attribute :biggs_config, default: {}
+    end
+
+    class_methods do
+      def biggs(method_name=:postal_address, options={})
+        self.define_method(method_name) do
+          value_methods = self.biggs_config[method_name][:value_methods]
+          self.biggs_config[method_name][:instance].format(
+            Helpers.biggs_get_value(self, :country, value_methods),
+            Helpers.biggs_values(self, value_methods)
+          )
+        end
 
         value_methods = {}
         Biggs::Formatter::FIELDS.each do |field|
           value_methods[field] = options.delete(field) if options[field]
         end
-        
-        self.biggs_value_methods = value_methods
-        self.biggs_instance = Biggs::Formatter.new(options)
+
+        self.biggs_config = self.biggs_config.dup
+
+        self.biggs_config[method_name] = {
+          instance: Biggs::Formatter.new(options),
+          value_methods: value_methods
+        }
       end
     end
-    
-    module InstanceMethods
-      
-      def biggs_postal_address
-        self.class.biggs_instance.format(biggs_country, biggs_values)
-      end
-    
-      private
-    
-      def biggs_country
-        biggs_get_value(:country)
-      end
-    
-      def biggs_values
+
+    module Helpers
+      def self.biggs_values(instance, value_methods)
         values = {}
         (Biggs::Formatter::FIELDS - [:country]).each do |field|
-          values[field] = biggs_get_value(field)
+          values[field] = self.biggs_get_value(instance, field, value_methods)
         end
         values
       end
-      
-      def biggs_get_value(field)
-        key = self.class.biggs_value_methods[field.to_sym] || field.to_sym
-        
+
+      def self.biggs_get_value(instance, field, value_methods)
+        key = value_methods[field] || field
+
         case key
         when Symbol
-          self.send(key.to_sym)
+          instance.send(key.to_sym)
         when Proc
-          key.call(self).to_s
+          key.call(instance).to_s
         when Array
           if key.all?{|it| it.is_a?(Symbol) }
-            key.map{|method| self.send(method) }.reject(&:blank?).join("\n")
+            key.map{|method| instance.send(method) }.reject(&:blank?).join("\n")
           else
             raise "Biggs: Can't handle #{field} type Array with non-symbolic entries"
           end

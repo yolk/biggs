@@ -1,9 +1,7 @@
-require 'rubygems'
-require 'active_record'
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
-class BaseTable < ActiveRecord::Base
-  include Biggs::ActiveRecordAdapter
+class BaseClass
+  include Biggs
 
   Biggs::Formatter::FIELDS.each do |field|
     define_method(field) do
@@ -12,13 +10,13 @@ class BaseTable < ActiveRecord::Base
   end
 end
 
-class FooBarEmpty < BaseTable;end
+class FooBarEmpty < BaseClass;end
 
-class FooBar < BaseTable
+class FooBar < BaseClass
   biggs :postal_address
 end
 
-class FooBarCustomFields < BaseTable
+class FooBarCustomFields < BaseClass
   biggs :postal_address, :country => :my_custom_country_method,
                   :city => :my_custom_city_method
 
@@ -31,7 +29,7 @@ class FooBarCustomFields < BaseTable
   end
 end
 
-class FooBarCustomBlankDECountry < BaseTable
+class FooBarCustomBlankDECountry < BaseClass
   biggs :postal_address, :blank_country_on => "de"
 
   def country
@@ -39,11 +37,11 @@ class FooBarCustomBlankDECountry < BaseTable
   end
 end
 
-class FooBarCustomMethod < BaseTable
+class FooBarCustomMethod < BaseClass
   biggs :my_postal_address_method
 end
 
-class FooBarCustomProc < BaseTable
+class FooBarCustomProc < BaseClass
   biggs :postal_address,
         :country => Proc.new {|it| it.method_accessed_from_proc + "XX"},
         :state => Proc.new {|it| it.state.downcase }
@@ -53,7 +51,7 @@ class FooBarCustomProc < BaseTable
   end
 end
 
-class FooBarCustomArray < BaseTable
+class FooBarCustomArray < BaseClass
   biggs :postal_address,
         :street => [:address_1, :address_empty, :address_nil, :address_2]
 
@@ -74,7 +72,7 @@ class FooBarCustomArray < BaseTable
   end
 end
 
-class FooBarMultiple < BaseTable
+class FooBarMultiple < BaseClass
   biggs :postal_address_one
   biggs :postal_address_two,
         country: :alt_country
@@ -86,8 +84,8 @@ end
 
 describe "ActiveRecord Class" do
 
-  it "should include Biggs::ActiveRecordAdapter" do
-    FooBar.included_modules.should be_include(Biggs::ActiveRecordAdapter)
+  it "should include Biggs::Concern" do
+    FooBar.included_modules.should be_include(Biggs::Concern)
   end
 
   it "should set class value biggs_config" do

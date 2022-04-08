@@ -1,5 +1,7 @@
 ### dev
 
+* Removed activerecord dependency and use only activesupport instead
+* Renamed Biggs::ActiveRecordAdapter to Biggs::Concern, include with 'include Biggs'
 * Optimization: Added Biggs::Formatter::FIELDS_WO_COUNTRY
 * Moved Biggs.formats and Biggs.country_names to Constants Biggs::FORMATS & Biggs::COUNTRY_NAMES
 

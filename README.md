@@ -40,7 +40,7 @@ With the data from the above example this would return:
 ### Usage with Rails and ActiveRecord
 
     Address < ActiveRecord::Base
-      include Biggs::ActiveRecordAdapter
+      include Biggs
 
       biggs :postal_address
     end
@@ -50,7 +50,7 @@ This adds the method postal_address to your Address-model, and assumes the prese
 You can customize the method-names biggs will use by passing in a hash of options:
 
     Address < ActiveRecord::Base
-      include Biggs::ActiveRecordAdapter
+      include Biggs
 
       biggs :postal_address,
             :zip => :postal_code,
@@ -63,7 +63,7 @@ You can pass in a symbol to let biggs call a different method on your Address-mo
 You can even pass in a array of symbols:
 
     Address < ActiveRecord::Base
-      include Biggs::ActiveRecordAdapter
+      include Biggs
 
       biggs :postal_address,
             :recipient => [:company_name, :person_name]

@@ -1,7 +1,8 @@
+require 'active_support'
 require 'active_support/core_ext/class/attribute'
 
 module Biggs
-  module ActiveRecordAdapter
+  module Concern
     extend ActiveSupport::Concern
 
     included do

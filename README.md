@@ -4,11 +4,7 @@ biggs is a small ruby gem/rails plugin for formatting postal addresses from over
 
 As a ruby gem:
 
-    sudo gem install biggs
-
-If your rather prefer to install it as a plugin for rails, from your application directory simply run:
-
-    script/plugin install git://github.com/yolk/biggs.git
+    gem install biggs
 
 ### Standalone usage
 
@@ -16,34 +12,36 @@ If your rather prefer to install it as a plugin for rails, from your application
 
     f.format("de", # <= ISO alpha 2 code
       :recipient  => "Yolk Sebastian Munz & Julia Soergel GbR",
-      :street     => "Adalbertstr. 11", # <= street + house number
-      :city       => "Berlin",
-      :zip        => 10999,
-      :state      => "Berlin" # <= state/province/region
+      :street     => "Musterallee 12", # <= street + house number
+      :city       => "Ausgedacht",
+      :zip        => 12345,
+      :state      => "Nowhere" # <= state/province/region
     )
 
 returns
 
     "Yolk Sebastian Munz & Julia Soergel GbR
-    Adalbertstr. 11
-    10999 Berlin
+    Musterallee 12
+    12345 Ausgedacht
     Germany"
 
 At the moment Biggs::Formatter.new accepts only one option:
 
 *blank_country_on* ISO alpha 2 code (single string or array) of countries the formatter should skip the line "country" (for national shipping).
 
-    Biggs::Formatter.new(:blank_country_on => "de")
+    Biggs::Formatter.new(blank_country_on: "de")
 
 With the data from the above example this would return:
 
     "Yolk Sebastian Munz & Julia Soergel GbR
-    Adalbertstr. 11
-    10999 Berlin"
+    Musterallee 12
+    12345 Ausgedacht"
 
 ### Usage with Rails and ActiveRecord
 
     Address < ActiveRecord::Base
+      include Biggs::ActiveRecordAdapter
+
       biggs :postal_address
     end
 
@@ -52,6 +50,8 @@ This adds the method postal_address to your Address-model, and assumes the prese
 You can customize the method-names biggs will use by passing in a hash of options:
 
     Address < ActiveRecord::Base
+      include Biggs::ActiveRecordAdapter
+
       biggs :postal_address,
             :zip => :postal_code,
             :country => :country_code,
@@ -63,6 +63,8 @@ You can pass in a symbol to let biggs call a different method on your Address-mo
 You can even pass in a array of symbols:
 
     Address < ActiveRecord::Base
+      include Biggs::ActiveRecordAdapter
+
       biggs :postal_address,
             :recipient => [:company_name, :person_name]
     end
@@ -145,6 +147,6 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 * United States of America
 * Yemen
 
-biggs is tested to behave well with Rails 3.0, 3.1, 3.2 and 4.0
+biggs is tested to behave well with Rails 3 to 7
 
-Copyright (c) 2009-2013 Yolk Sebastian Munz & Julia Soergel GbR
+Copyright (c) 2009-2022 Yolk Sebastian Munz & Julia Soergel GbR

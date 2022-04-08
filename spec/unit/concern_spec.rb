@@ -75,10 +75,10 @@ end
 class FooBarMultiple < BaseClass
   biggs :postal_address_one
   biggs :postal_address_two,
-        country: :alt_country
+        country: :empty_field,
+        recipient: :empty_field
 
-  def alt_country
-    "Alt country"
+  def empty_field
   end
 end
 
@@ -156,7 +156,7 @@ describe "ActiveRecord Instance" do
     end
 
     it "should return postal_address with alt country on postal_address_two" do
-      FooBarMultiple.new.postal_address_two.should eql("RECIPIENT\nSTREET\nCITY STATE ZIP\nalt country")
+      FooBarMultiple.new.postal_address_two.should eql("STREET\nCITY STATE ZIP")
     end
   end
 

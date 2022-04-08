@@ -1,5 +1,7 @@
 ### dev
 
+* Remove not only trailing but also leading newline from formatted address
+
 ### 0.5.1 / 2022-04-08
 
 * Biggs::Extractor: small refactorings + don't delete options

@@ -1,5 +1,6 @@
 ### dev
 
+* Refactored Biggs::Concern to use Biggs::Extractor
 * Removed activerecord dependency and use only activesupport instead
 * Renamed Biggs::ActiveRecordAdapter to Biggs::Concern, include with 'include Biggs'
 * Optimization: Added Biggs::Formatter::FIELDS_WO_COUNTRY

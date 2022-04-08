@@ -37,9 +37,9 @@ With the data from the above example this would return:
     Musterallee 12
     12345 Ausgedacht"
 
-### Usage with Rails and ActiveRecord
+### Usage with Class
 
-    Address < ActiveRecord::Base
+    class Address
       include Biggs
 
       biggs :postal_address
@@ -49,7 +49,7 @@ This adds the method postal_address to your Address-model, and assumes the prese
 
 You can customize the method-names biggs will use by passing in a hash of options:
 
-    Address < ActiveRecord::Base
+    class Address
       include Biggs
 
       biggs :postal_address,
@@ -62,7 +62,7 @@ You can pass in a symbol to let biggs call a different method on your Address-mo
 
 You can even pass in a array of symbols:
 
-    Address < ActiveRecord::Base
+    class Address
       include Biggs
 
       biggs :postal_address,
@@ -73,7 +73,7 @@ This will call the methods company_name and person_name on your address-instance
 
 To access the formatted address string, simply call the provided method on an address instance:
 
-    Address.find(1).postal_address
+    Address.new.postal_address
 
 If you pass in a ISO alpha 2 code as :country that is not supported by biggs, it will choose the US-format for addresses with an state specified, and the french/german format for addresses without an state.
 

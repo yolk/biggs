@@ -79,7 +79,7 @@ class FooBarMultiple < BaseClass
         recipient: false
 end
 
-describe "ActiveRecord Class" do
+describe "Extended Class" do
 
   it "should include Biggs::Concern" do
     FooBar.included_modules.should be_include(Biggs::Concern)
@@ -94,7 +94,7 @@ describe "ActiveRecord Class" do
   end
 end
 
-describe "ActiveRecord Instance" do
+describe "Extended Class Instance" do
 
   describe "Empty" do
     it "should not have postal_address method" do

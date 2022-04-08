@@ -3,15 +3,8 @@ require 'biggs/formatter'
 require 'yaml'
 
 module Biggs
-  class << self
-    def formats
-      @@formats ||= YAML.load_file(File.join(File.dirname(__FILE__), '..', 'formats.yml')) || {}
-    end
-
-    def country_names
-      @@country_names ||= YAML.load_file(File.join(File.dirname(__FILE__), '..', 'country_names.yml')) || {}
-    end
-  end
+  FORMATS = (YAML.load_file(File.join(File.dirname(__FILE__), '..', 'formats.yml')) || {}).freeze
+  COUNTRY_NAMES = (YAML.load_file(File.join(File.dirname(__FILE__), '..', 'country_names.yml')) || {}).freeze
 end
 
 if defined?(ActiveRecord) and defined?(ActiveRecord::Base) and !ActiveRecord::Base.respond_to?(:biggs_formatter)

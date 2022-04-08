@@ -1,6 +1,7 @@
 ### dev
 
 * Optimization: Added Biggs::Formatter::FIELDS_WO_COUNTRY
+* Moved Biggs.formats and Biggs.country_names to Constants Biggs::FORMATS & Biggs::COUNTRY_NAMES
 
 ### 0.4.0 / 2022-04-08
 

@@ -28,8 +28,8 @@ module Biggs
 
     def default_format_string(state)
       state && state != "" ?
-        Biggs.formats[default_country_with_state || "us"] :
-        Biggs.formats[default_country_without_state || "fr"]
+        Biggs::FORMATS[default_country_with_state || "us"] :
+        Biggs::FORMATS[default_country_without_state || "fr"]
     end
   end
 

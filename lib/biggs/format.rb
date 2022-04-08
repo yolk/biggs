@@ -4,8 +4,8 @@ module Biggs
 
     def initialize(iso_code)
       @iso_code = iso_code.to_s.downcase
-      @country_name = Biggs.country_names[@iso_code]
-      @format_string = Biggs.formats[@iso_code]
+      @country_name = Biggs::COUNTRY_NAMES[@iso_code]
+      @format_string = Biggs::FORMATS[@iso_code]
     end
 
     class << self

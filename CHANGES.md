@@ -1,5 +1,7 @@
 ### dev
 
+### 0.5.1 / 2022-04-08
+
 * Biggs::Extractor: small refactorings + don't delete options
 
 ### 0.5.0 / 2022-04-08

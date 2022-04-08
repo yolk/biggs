@@ -75,11 +75,8 @@ end
 class FooBarMultiple < BaseClass
   biggs :postal_address_one
   biggs :postal_address_two,
-        country: :empty_field,
-        recipient: :empty_field
-
-  def empty_field
-  end
+        country: false,
+        recipient: false
 end
 
 describe "ActiveRecord Class" do

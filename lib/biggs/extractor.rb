@@ -2,7 +2,7 @@ module Biggs
   class Extractor
     def initialize(options)
       @value_methods = Biggs::Formatter::FIELDS.reduce({}) do |methods, field|
-        methods[field] = options[field] if options[field]
+        methods[field] = options[field] if options[field] || options[field] == false
         methods
       end
     end
@@ -15,6 +15,8 @@ module Biggs
     end
 
     def get_value(instance, field)
+      return if @value_methods[field] == false
+
       key = @value_methods[field] || field
 
       case key

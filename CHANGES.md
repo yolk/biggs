@@ -1,5 +1,7 @@
 ### dev
 
+* Optimization: Added Biggs::Formatter::FIELDS_WO_COUNTRY
+
 ### 0.4.0 / 2022-04-08
 
 * [BREAKING]: Do not include to ActiveRecord::Base per default, use 'include Biggs::ActiveRecordAdapter' in your classes

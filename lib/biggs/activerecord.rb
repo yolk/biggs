@@ -35,7 +35,7 @@ module Biggs
     module Helpers
       def self.biggs_values(instance, value_methods)
         values = {}
-        (Biggs::Formatter::FIELDS - [:country]).each do |field|
+        Biggs::Formatter::FIELDS_WO_COUNTRY.each do |field|
           values[field] = self.biggs_get_value(instance, field, value_methods)
         end
         values

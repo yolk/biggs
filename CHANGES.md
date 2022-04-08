@@ -1,5 +1,7 @@
 ### dev
 
+* Biggs::Extractor: small refactorings + don't delete options
+
 ### 0.5.0 / 2022-04-08
 
 * Refactored Biggs::Concern to use Biggs::Extractor

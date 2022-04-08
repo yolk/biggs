@@ -1,18 +1,17 @@
 module Biggs
   class Extractor
     def initialize(options)
-      @value_methods = {}
-      Biggs::Formatter::FIELDS.each do |field|
-        @value_methods[field] = options.delete(field) if options[field]
+      @value_methods = Biggs::Formatter::FIELDS.reduce({}) do |methods, field|
+        methods[field] = options[field] if options[field]
+        methods
       end
     end
 
     def get_values(instance)
-      values = {}
-      Biggs::Formatter::FIELDS_WO_COUNTRY.each do |field|
+      Biggs::Formatter::FIELDS_WO_COUNTRY.inject({}) do |values, field|
         values[field] = get_value(instance, field)
+        values
       end
-      values
     end
 
     def get_value(instance, field)

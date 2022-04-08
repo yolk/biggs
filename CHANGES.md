@@ -1,5 +1,10 @@
 ### dev
 
+### 0.4.0 / 2022-04-08
+
+* [BREAKING]: Do not include to ActiveRecord::Base per default, use 'include Biggs::ActiveRecordAdapter' in your classes
+* Allow multiple biggs methods per class
+
 ### 0.3.3 / 2013-05-06
 
 * Added support for Rails 4 (by [mdemare](https://github.com/mdemare))

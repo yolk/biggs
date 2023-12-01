@@ -149,4 +149,4 @@ biggs knows how to format addresses of over 60 different countries. If you are m
 
 biggs is tested to behave well with ActiveSupport 3 to 7
 
-Copyright (c) 2009-2022 Yolk Sebastian Munz & Julia Soergel GbR
+Copyright (c) 2009-2023 Yolk Sebastian Munz & Julia Soergel GbR

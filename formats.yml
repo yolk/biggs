@@ -68,6 +68,11 @@ cn: |-
     {{street}}
     {{zip}} {{city}} {{state}}
     {{country}}
+cw: |-
+    {{recipient}}
+    {{street}}
+    {{zip}} {{city}}
+    {{country}}
 cz: |-
     {{recipient}}
     {{street}}
@@ -342,6 +347,11 @@ us: |-
     {{recipient}}
     {{street}}
     {{city}} {{state}} {{zip}}
+    {{country}}
+xk: |-
+    {{recipient}}
+    {{street}}
+    {{zip}} {{city}}
     {{country}}
 ye: |-
     {{recipient}}

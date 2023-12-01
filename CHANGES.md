@@ -1,5 +1,9 @@
 ### dev
 
+### 0.7.0 / 2023-12-01
+
+* Added formatter option: remove_empty_lines
+
 ### 0.6.0 / 2022-04-08
 
 * Remove not only trailing but also leading newline from formatted address

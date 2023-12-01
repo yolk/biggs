@@ -6,6 +6,7 @@ module Biggs
 
     def initialize(options={})
       @blank_country_on = [options[:blank_country_on]].compact.flatten.map{|s| s.to_s.downcase}
+      @remove_empty_lines = !!options[:remove_empty_lines]
     end
 
     def format(iso_code, values={})
@@ -19,6 +20,7 @@ module Biggs
         format_string.gsub!(/\{\{#{key}\}\}/, (values[key] || "").to_s)
       end
       format_string.gsub!(/\{\{country\}\}/, country_name)
+      format_string.gsub!(/\n(\s+)?\n/, "\n") if @remove_empty_lines
       format_string.strip
     end
 

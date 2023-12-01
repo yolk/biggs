@@ -1,4 +1,5 @@
 require 'active_support'
+require 'active_support/core_ext'
 require 'biggs/format'
 require 'biggs/formatter'
 require 'biggs/concern'
